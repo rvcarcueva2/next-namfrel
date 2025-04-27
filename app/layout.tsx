@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Manrope } from "next/font/google";  // Importing Manrope font from Google Fonts
+import "./globals.css"; // Importing global styles
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const manrope = Manrope({
+  variable: "--font-manrope",  // You can change this variable name if needed
+  subsets: ["latin"],         // Add other subsets as needed
+  weight: ["400", "600", "700"], // Normal, semi-bold, and bold weights
 });
 
 export const metadata: Metadata = {
@@ -19,14 +15,28 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${manrope.variable} antialiased`}>
+        {/* Main Header */}
+        <header className="main-header ">
+          <div className="header-content">Header</div>
+          <img
+              src="/images/eleksyon-logo.png"  
+              alt="Eleksyon Logo" 
+              className="w-[243px] h-[152.9px] transform -translate-x-3 -translate-y-27"
+            />
+        </header>
+
+        {/* Sub Header */}
+        <header className="sub-header">
+          <div className="header-content">SUB HEADER </div>
+        </header>
+
+        {/* Main Content */}
         {children}
       </body>
     </html>
