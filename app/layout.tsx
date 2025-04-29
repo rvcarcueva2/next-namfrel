@@ -22,22 +22,44 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
         {/* Main Header */}
-        <header className="main-header ">
-          <div className="header-content">Header</div>
-          <img
-              src="/images/eleksyon-logo.png"  
-              alt="Eleksyon Logo" 
-              className="w-[243px] h-[152.9px] transform -translate-x-3 -translate-y-27"
-            />
+        <header className="main-header relative z-0 flex items-center px-4">
+          {/*Logo */}
+          <div className="absolute -top-[35px] left-0 z-10">
+            <div className="logo-container flex items-center justify-center">
+              <img
+                  src="/images/eleksyon-logo-new.png"  
+                  alt="Eleksyon Logo" 
+                  className="eleksyon-logo w-[85%] h-auto object-contain"
+                />
+            </div>
+          </div>
+
+        {/* Main Navigation Header */}
+        <nav className="flex flex-1 justify-center items-center gap-6 text-white font-semibold ml-[310px]">
+          <a href="/transmission">Transmission</a>
+          <a href="/analytics">Analytics</a>
+          <a href="/voters-profile">Voter's Profile</a>
+        </nav>
+
+        {/* Search */}
+        <div className="ml-auto pr-4">
+          <input
+            type="text"
+            placeholder="Search Location, Candidate, or Party"
+            className="rounded-lg px-4 py-2 bg-[#003f7d] text-white placeholder:text-blue-200 w-[260px]"
+          />
+        </div>
         </header>
 
         {/* Sub Header */}
-        <header className="sub-header">
-          <div className="header-content">SUB HEADER </div>
+        <header className="sub-header flex justify-center items-center gap-8 text-white font-semibold">
+          <a href="/senate">SENATE</a>
+          <a href="/party-list">PARTY-LIST</a>
+          <a href="/provincial">PROVINCIAL</a>
+          <a href="/city">CITY</a>
         </header>
 
-        {/* Main Content */}
-        {children}
+        
       </body>
     </html>
   );
