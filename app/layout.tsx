@@ -21,35 +21,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
-        {/* Main Header */}
-        <header className="main-header relative z-0 flex items-center px-4">
-          {/*Logo */}
-          <div className="absolute -top-[35px] left-0 z-10">
-            <div className="logo-container flex items-center justify-center">
-              <img
-                  src="/images/eleksyon-logo-new.png"  
-                  alt="Eleksyon Logo" 
-                  className="eleksyon-logo w-[85%] h-auto object-contain"
-                />
-            </div>
+        {/* Trapezoid Logo Container */}
+        <div className="relative z-20 flex -mb-10">
+          <div className="w-[220px] h-[90px] bg-white clip-trapezoid flex items-center justify-center shadow-md">
+            <img
+              src="/images/eleksyon-logo-new.png"
+              alt="Eleksyon Logo"
+              className="w-[85%] h-auto object-contain"
+            />
           </div>
-
-        {/* Main Navigation Header */}
-        <nav className="flex flex-1 justify-center items-center gap-6 text-white font-semibold ml-[310px]">
-          <a href="/transmission">Transmission</a>
-          <a href="/analytics">Analytics</a>
-          <a href="/voters-profile">Voter's Profile</a>
-        </nav>
-
-        {/* Search */}
-        <div className="ml-auto pr-4">
-          <input
-            type="text"
-            placeholder="Search Location, Candidate, or Party"
-            className="rounded-lg px-4 py-2 bg-[#003f7d] text-white placeholder:text-blue-200 w-[260px]"
-          />
         </div>
-        </header>
+
+
+        {/* Main Header */}
+        <header className="main-header relative z-10 flex items-center px-4 py-2 bg-blue-700">
+          {/* Main Navigation Header */}
+          <nav className="flex flex-1 justify-center items-center gap-8 text-white font-semibold ml-[310px]">
+            <a href="/transmission">Transmission</a>
+            <a href="/analytics">Analytics</a>
+            <a href="/voters-profile">Voter's Profile</a>
+          </nav>
+
+      </header>
+      
 
         {/* Sub Header */}
         <header className="sub-header flex justify-center items-center gap-8 text-white font-semibold">

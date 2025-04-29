@@ -47,6 +47,10 @@ body {
   box-sizing: border-box;
 }
 
+.clip-trapezoid {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%)
+}
+
 .eleksyon-logo {
   position: absolute;
   height: 120px;
