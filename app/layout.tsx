@@ -21,38 +21,43 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
-        {/* Trapezoid Logo Container */}
-        <div className="relative z-20 flex -mb-10">
-          <div className="w-[220px] h-[90px] bg-white clip-trapezoid flex items-center justify-center shadow-md">
+
+
+        {/* Logo Section */}
+        <div className="relative z-20 flex -mb-15">
+          <div className="logo-container">
             <img
               src="/images/eleksyon-logo-new.png"
               alt="Eleksyon Logo"
-              className="w-[85%] h-auto object-contain"
+              className="eleksyon-logo"
             />
           </div>
         </div>
 
+        {/* Header Section*/}
+        <div className="header-container">
 
-        {/* Main Header */}
-        <header className="main-header relative z-10 flex items-center px-4 py-2 bg-blue-700">
-          {/* Main Navigation Header */}
-          <nav className="flex flex-1 justify-center items-center gap-8 text-white font-semibold ml-[310px]">
-            <a href="/transmission">Transmission</a>
-            <a href="/analytics">Analytics</a>
-            <a href="/voters-profile">Voter's Profile</a>
-          </nav>
+          {/* Main Header */}
+          <header className="main-header relative z-10 flex items-center px-4 py-2 bg-blue-700">
+            
+            {/* Main Navigation Header */}
+            <nav className="flex flex-1 justify-center items-center gap-8 text-white font-semibold">
+              <a href="/">Transmission</a>
+              <a href="/analytics">Analytics</a>
+              <a href="/voters-profile">Voter's Profile</a>
+            </nav>
 
-      </header>
+          </header>
       
 
         {/* Sub Header */}
-        <header className="sub-header flex justify-center items-center gap-8 text-white font-semibold">
+        <header className="sub-header gap-8 text-white font-semibold">
           <a href="/senate">SENATE</a>
           <a href="/party-list">PARTY-LIST</a>
           <a href="/provincial">PROVINCIAL</a>
           <a href="/city">CITY</a>
         </header>
-
+      </div>
         
       </body>
     </html>
