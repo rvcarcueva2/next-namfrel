@@ -59,6 +59,9 @@ export default function RootLayout({
         </header>
       </div>
         
+      <main className="content-container">
+        {children}
+    </main>
       </body>
     </html>
   );
