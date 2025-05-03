@@ -20,10 +20,17 @@ const Footer = () => {
 
         {/* logos */}
         <div className="w-full md:w-[23%]">
-          <div className="flex justify-center md:justify-start mb-6">
+          <div className="flex justify-center md:justify-start mb-2">
+          <Image
+              src="/images/namfrel-logo.png"
+              alt="NAMFREL Logo"
+              width={127}
+              height={122}
+              className="object-contain"
+            />
             <Image
-              src="/images/eleksyon-logo.png"
-              alt="Eleksyon Logo"
+              src="/images/apc-logo.png"
+              alt="APC Logo"
               width={127}
               height={122}
               className="object-contain"
@@ -72,7 +79,7 @@ const Footer = () => {
             <path d="M2.038 5.61A2.01 2.01 0 0 0 2 6v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6c0-.12-.01-.238-.03-.352l-.866.65-7.89 6.032a2 2 0 0 1-2.429 0L2.884 6.288l-.846-.677Z"/>
             <path d="M20.677 4.117A1.996 1.996 0 0 0 20 4H4c-.225 0-.44.037-.642.105l.758.607L12 10.742 19.9 4.7l.777-.583Z"/>
           </svg>
-            <span>example@gmail.com</span>
+            <span>namfrelsecretariat@namfrel.org.ph</span>
           </div>
         </div>
 
