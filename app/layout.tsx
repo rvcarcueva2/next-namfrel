@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";  // Importing Manrope font from Google Fonts
 import "./globals.css"; // Importing global styles
+import Footer from "./components/Footer";
 
 const manrope = Manrope({
   variable: "--font-manrope",  // You can change this variable name if needed
@@ -25,8 +26,8 @@ export default function RootLayout({
         <header className="main-header ">
           <div className="header-content">Header</div>
           <img
-              src="/images/eleksyon-logo.png"  
-              alt="Eleksyon Logo" 
+              src="/images/eleksyon-logo.png"
+              alt="Eleksyon Logo"
               className="w-[243px] h-[152.9px] transform -translate-x-3 -translate-y-27"
             />
         </header>
@@ -38,6 +39,9 @@ export default function RootLayout({
 
         {/* Main Content */}
         {children}
+
+        {/* Footer */}
+        <Footer />
       </body>
     </html>
   );
