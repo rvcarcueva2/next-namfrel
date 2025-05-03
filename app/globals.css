@@ -28,14 +28,23 @@ body {
   margin: 0;
 }
 
+/* footer fonts */
+.font-roboto {
+  font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.font-manrope {
+  font-family: var(--font-manrope), -apple-system, Roboto, Helvetica, sans-serif;
+}
+
 .text-black {
   color: black;
 }
 
 .main-header {
-  width: 100%; 
-  height: 87px; 
-  background-color: #00509d; 
+  width: 100%;
+  height: 87px;
+  background-color: #00509d;
   margin: 0;
 }
 
@@ -44,25 +53,24 @@ body {
   justify-content: right;
   align-items: center;
   margin-right:40px;
-  height: 100%; 
+  height: 100%;
   color: white;
-  font-size: 21px; 
+  font-size: 21px;
   font-weight: bold;
-  
+
 }
 
 .sub-header {
-  width: 100%; 
-  height: 63px; 
-  background-color: #b00505; 
+  width: 100%;
+  height: 63px;
+  background-color: #b00505;
 }
 
 .sub-header .header-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%; 
+  height: 100%;
   color: white;
-  font-size: 20px; 
+  font-size: 20px;
 }
-
