@@ -51,14 +51,23 @@ export default function RootLayout({
       
 
         {/* Sub Header */}
-        <header className="sub-header gap-8 text-white font-semibold">
-          <a href="/senate">SENATE</a>
-          <a href="/party-list">PARTY-LIST</a>
-          <a href="/provincial">PROVINCIAL</a>
-          <a href="/city">CITY</a>
-        </header>
-      </div>
-        
+        <div className="sub-header gap-8 text-white font-semibold p-4">
+            <ul className="flex justify-center gap-8 text-white font-semibold">
+              <li>
+                <a href="/senate">SENATE</a>
+              </li>
+              <li>
+                <a href="/party-list">PARTY-LIST</a>
+              </li>
+              <li>
+                <a href="/provincial">PROVINCIAL</a>
+              </li>
+              <li>
+                <a href="/city">CITY</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </body>
     </html>
   );
