@@ -29,6 +29,15 @@ body {
   padding: 0;
 }
 
+/* footer fonts */
+.font-roboto {
+  font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.font-manrope {
+  font-family: var(--font-manrope), -apple-system, Roboto, Helvetica, sans-serif;
+}
+
 .text-black {
   color: black;
 }
