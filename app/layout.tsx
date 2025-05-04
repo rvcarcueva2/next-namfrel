@@ -97,6 +97,9 @@ export default function RootLayout({
           </ul>
         </div>
         </div>
+        {children}
+        <Footer>
+        </Footer>
       </body>
     </html>
   );
