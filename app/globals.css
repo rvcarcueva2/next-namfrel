@@ -26,6 +26,7 @@ body {
   background-color: #efefef;
   min-height: 100vh;
   margin: 0;
+  padding: 0;
 }
 
 /* footer fonts */
@@ -41,36 +42,51 @@ body {
   color: black;
 }
 
-.main-header {
-  width: 100%;
-  height: 87px;
-  background-color: #00509d;
-  margin: 0;
+.logo-container {
+  width: 295px;
+  height: 158px;
+  background: #FFFFFF;
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+  box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  z-index: 30;
+  position: relative;
+  margin-bottom: -85px;
 }
 
-.main-header .header-content {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  margin-right:40px;
-  height: 100%;
-  color: white;
-  font-size: 21px;
-  font-weight: bold;
+.eleksyon-logo {
+  position: relative;
+  width: 85%;
+  height: auto;
+  object-fit: contain;
+  right: 15px;
+}
 
+.header-container {
+  margin-top: 31px;
+  position: relative;
+  z-index: 10;
+}
+
+.main-header {
+  width: 100%; 
+  height: 80px; 
+  background-color: #00509d; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sub-header {
-  width: 100%;
-  height: 63px;
-  background-color: #b00505;
-}
-
-.sub-header .header-content {
+  width: 100%; 
+  height: 63px; 
+  background-color: #b00505; 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  color: white;
-  font-size: 20px;
+  box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.25);
 }
+
