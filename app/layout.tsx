@@ -42,9 +42,18 @@ export default function RootLayout({
             
             {/* Main Navigation Header */}
             <nav className="flex flex-1 justify-center items-center gap-8 text-white font-semibold">
-              <a href="/">Transmission</a>
-              <a href="/analytics">Analytics</a>
-              <a href="/voters-profile">Voter's Profile</a>
+              <a href="/" className="relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform 
+                      after:duration-300 after:origin-left hover:after:scale-x-100">
+                        Transmission
+                        </a>
+              <a href="/analytics"className="relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform 
+                      after:duration-300 after:origin-left hover:after:scale-x-100">
+                        Analytics
+                        </a>
+              <a href="/voters-profile" className="relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform 
+                      after:duration-300 after:origin-left hover:after:scale-x-100">
+                        Voter's Profile
+                        </a>
             </nav>
 
           </header>
