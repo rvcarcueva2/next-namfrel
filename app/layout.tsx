@@ -52,21 +52,41 @@ export default function RootLayout({
 
         {/* Sub Header */}
         <div className="sub-header gap-8 text-white font-semibold p-4">
-            <ul className="flex justify-center gap-8 text-white font-semibold">
-              <li>
-                <a href="/senate">SENATE</a>
-              </li>
-              <li>
-                <a href="/party-list">PARTY-LIST</a>
-              </li>
-              <li>
-                <a href="/provincial">PROVINCIAL</a>
-              </li>
-              <li>
-                <a href="/city">CITY</a>
-              </li>
-            </ul>
-          </div>
+          <ul className="flex justify-center gap-8 text-white font-semibold">
+            <li>
+              <a
+                href="/senate"
+                className="relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+              >
+                SENATE
+              </a>
+            </li>
+            <li>
+              <a
+                href="/party-list"
+                className="relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+              >
+                PARTY-LIST
+              </a>
+            </li>
+            <li>
+              <a
+                href="/provincial"
+                className="relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+              >
+                PROVINCIAL
+              </a>
+            </li>
+            <li>
+              <a
+                href="/city"
+                className="relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100"
+              >
+                CITY
+              </a>
+            </li>
+          </ul>
+        </div>
         </div>
       </body>
     </html>
