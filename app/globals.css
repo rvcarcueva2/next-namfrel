@@ -29,6 +29,15 @@ body {
   padding: 0;
 }
 
+/* footer fonts */
+.font-roboto {
+  font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.font-manrope {
+  font-family: var(--font-manrope), -apple-system, Roboto, Helvetica, sans-serif;
+}
+
 .text-black {
   color: black;
 }
@@ -69,7 +78,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.25);
 }
 
 .sub-header {
@@ -79,4 +87,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.25);
 }
+
