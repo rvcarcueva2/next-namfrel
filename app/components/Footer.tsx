@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,6 +14,37 @@ const links = [
 ];
 
 const Footer = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [responseMsg, setResponseMsg] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setResponseMsg("");
+
+    const res = await fetch("/api/form", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      setResponseMsg("Thank you! Your message has been sent.");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      setResponseMsg(data.message || "Something went wrong.");
+    }
+
+    setIsSubmitting(false);
+  };
+
   return (
     <footer className="bg-[#00509d] text-white pt-10">
       <div className="max-w-[1342px] mx-auto px-6 flex flex-wrap justify-between gap-y-10">
@@ -191,28 +222,41 @@ const Footer = () => {
         {/* contact us */}
         <div className="w-full md:w-[36%]">
           <h3 className="text-base font-bold mb-4">Contact Us</h3>
-          <form className="flex flex-col gap-3 text-sm">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-sm">
             <div className="flex gap-2">
               <input
                 type="text"
                 placeholder="Name"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 className="w-1/2 px-3 py-2 rounded bg-[#f8f8f8e5] text-black shadow-md"
               />
               <input
                 type="email"
                 placeholder="Email"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 className="w-1/2 px-3 py-2 rounded bg-[#f8f8f8e5] text-black shadow-md"
               />
             </div>
             <textarea
               placeholder="Message"
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
               className="w-full h-32 px-3 py-2 rounded bg-[#f8f8f8e5] text-black shadow-md"
             />
             <button
               type="submit"
+              disabled={isSubmitting}
               className="self-end bg-[#ffca0a] text-[#111928] px-5 py-2 rounded shadow-md"
             >
-              Submit
+              {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </form>
         </div>
