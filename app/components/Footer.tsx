@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,16 +14,54 @@ const links = [
 ];
 
 const Footer = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [responseMsg, setResponseMsg] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setResponseMsg("");
+
+    const res = await fetch("/api/form", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      setResponseMsg("Thank you! Your message has been sent.");
+      setFormData({ name: "", email: "", message: "" });
+    } else {
+      setResponseMsg(data.message || "Something went wrong.");
+    }
+
+    setIsSubmitting(false);
+  };
+
   return (
     <footer className="bg-[#00509d] text-white pt-10">
       <div className="max-w-[1342px] mx-auto px-6 flex flex-wrap justify-between gap-y-10">
 
         {/* logos */}
         <div className="w-full md:w-[23%]">
-          <div className="flex justify-center md:justify-start mb-6">
+          <div className="flex justify-center md:justify-start mb-2">
+          <Image
+              src="/images/namfrel-logo.png"
+              alt="NAMFREL Logo"
+              width={127}
+              height={122}
+              className="object-contain"
+            />
             <Image
-              src="/images/eleksyon-logo.png"
-              alt="Eleksyon Logo"
+              src="/images/apc-logo.png"
+              alt="APC Logo"
               width={127}
               height={122}
               className="object-contain"
@@ -72,7 +110,7 @@ const Footer = () => {
             <path d="M2.038 5.61A2.01 2.01 0 0 0 2 6v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6c0-.12-.01-.238-.03-.352l-.866.65-7.89 6.032a2 2 0 0 1-2.429 0L2.884 6.288l-.846-.677Z"/>
             <path d="M20.677 4.117A1.996 1.996 0 0 0 20 4H4c-.225 0-.44.037-.642.105l.758.607L12 10.742 19.9 4.7l.777-.583Z"/>
           </svg>
-            <span>example@gmail.com</span>
+            <span>namfrelsecretariat@namfrel.org.ph</span>
           </div>
         </div>
 
@@ -184,28 +222,41 @@ const Footer = () => {
         {/* contact us */}
         <div className="w-full md:w-[36%]">
           <h3 className="text-base font-bold mb-4">Contact Us</h3>
-          <form className="flex flex-col gap-3 text-sm">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-3 text-sm">
             <div className="flex gap-2">
               <input
                 type="text"
                 placeholder="Name"
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 className="w-1/2 px-3 py-2 rounded bg-[#f8f8f8e5] text-black shadow-md"
               />
               <input
                 type="email"
                 placeholder="Email"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 className="w-1/2 px-3 py-2 rounded bg-[#f8f8f8e5] text-black shadow-md"
               />
             </div>
             <textarea
               placeholder="Message"
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
               className="w-full h-32 px-3 py-2 rounded bg-[#f8f8f8e5] text-black shadow-md"
             />
             <button
               type="submit"
+              disabled={isSubmitting}
               className="self-end bg-[#ffca0a] text-[#111928] px-5 py-2 rounded shadow-md"
             >
-              Submit
+              {isSubmitting ? "Submitting..." : "Submit"}
             </button>
           </form>
         </div>
