@@ -87,7 +87,7 @@ const Footer = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <p className="text-center">
+              <p className="text-left">
                 Unit 601, DMG Center, <br />
                 Domingo M. Guevara St. Brgy. Mauway, <br />
                 Mandaluyong City, Philippines
@@ -230,11 +230,10 @@ const Footer = () => {
             <div className="flex flex-col gap-2">
               <input
                 type="text"
-                placeholder="Name"
+                placeholder="Name (Optional)"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-3 py-2 rounded bg-white/90 text-black shadow-md focus:ring-2 focus:ring-[#fdd854] outline-none"
-                required
               />
               <input
                 type="email"
@@ -256,14 +255,14 @@ const Footer = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-[#ffca0a] text-[#111928] px-5 py-2 rounded shadow-md hover:bg-[#ffd33d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="cursor-pointer bg-[#ffca0a] text-[#111928] px-5 py-2 rounded shadow-md hover:bg-[#ffd33d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </button>
             </div>
             {responseMsg && (
-              <p className={`text-sm text-center md:text-left ${
-                responseMsg.includes("Thank") ? "text-green-300" : "text-red-300"
+              <p className={`text-sm text-center ${
+                responseMsg.includes("Thank") ? "text-white" : "text-red-300"
               }`}>
                 {responseMsg}
               </p>
