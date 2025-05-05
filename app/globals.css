@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F1F1F3;
+  --background: #ffffff;
   --foreground: #171717;
 }
 
@@ -23,13 +23,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
-  background-color: #F1F1F3;
+  background-color: #efefef;
   min-height: 100vh;
   margin: 0;
   padding: 0;
 }
 
-/* footer fonts */
+/* Typography Utilities */
 .font-roboto {
   font-family: Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
@@ -38,14 +38,17 @@ body {
   font-family: var(--font-manrope), -apple-system, Roboto, Helvetica, sans-serif;
 }
 
+/* Colors */
 .text-black {
   color: black;
 }
 
+/* Logo Container - Responsive */
 .logo-container {
-  width: 295px;
-  height: 158px;
-  background: #FFFFFF;
+  width: 100%;
+  max-width: 295px;
+  height: auto;
+  background: #ffffff;
   clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
   box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -55,38 +58,61 @@ body {
   z-index: 30;
   position: relative;
   margin-bottom: -85px;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .logo-container {
+    max-width: 220px;
+    margin-bottom: -60px;
+    padding: 0.5rem;
+  }
 }
 
 .eleksyon-logo {
-  position: relative;
-  width: 85%;
+  width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
+  position: relative;
   right: 15px;
 }
 
+/* Header Styles */
 .header-container {
   margin-top: 31px;
   position: relative;
   z-index: 10;
 }
 
+/* Main Header - Responsive */
 .main-header {
-  width: 100%; 
-  height: 80px; 
-  background-color: #00509d; 
+  width: 100%;
+  background-color: #00509d;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
 }
 
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Sub Header - Responsive */
 .sub-header {
-  width: 100%; 
-  height: 63px; 
-  background-color: #b00505; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  background-color: #b00505;
   box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
 }
 
+@media (max-width: 768px) {
+  .sub-header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
