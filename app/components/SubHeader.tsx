@@ -12,13 +12,14 @@ export default function SubHeader() {
   ];
 
   return (
-    <div className="sub-header gap-8 text-white font-semibold p-4">
-      <ul className="flex justify-center gap-8">
+    <div className="sub-header text-white font-semibold hidden md:block">
+      {/* Desktop submenu */}
+      <ul className="hidden md:flex justify-center gap-8 bg-[#b00505] py-3">
         {links.map(({ href, label }) => (
           <li key={href}>
             <a
               href={href}
-              className={`text-lg transition transform active:-translate-y-0.5 relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100 ${
+              className={`text-lg uppercase transition transform active:-translate-y-0.5 relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100 ${
                 pathname === href ? "after:scale-x-100 font-bold" : ""
               }`}
             >
