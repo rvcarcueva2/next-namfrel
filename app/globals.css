@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #F1F1F3;
   --foreground: #171717;
 }
 
@@ -23,7 +23,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
-  background-color: #efefef;
+  background-color: #F1F1F3;
   min-height: 100vh;
   margin: 0;
   padding: 0;
