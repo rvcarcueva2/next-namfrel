@@ -43,48 +43,45 @@ body {
   color: black;
 }
 
+/* Drop Shadow Around Clipped Container */
 .logo-shadow-wrapper {
-  
   position: relative;
   z-index: 30;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
 }
 
 /* Logo Container - Responsive */
 .logo-container {
-  width: 100%;
-  max-width: 150px;
-  height: 200px;
+  position: relative;
+  z-index: 30;
+  width: 140px; 
+  height: 230px;
   background: #ffffff;
-  margin-bottom: -150px;  /* overlap effect */
-  padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  z-index: 30;
-  position: relative;
-  clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 105%, 0 85%);
+  padding: 1rem; 
+  margin-bottom: -150px; /* overlap effect */
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 50% 100%, 0 86%);
 }
-
 
 @media (max-width: 768px) {
   .logo-container {
-    max-width: 220px;
-    max-height: 100px;
-    margin-bottom: -60px;
-    padding: 0.5rem;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 105%, 0 85%);
+    width: 60px;
+    height: 60px;
+    margin: 0.5rem;
+    clip-path: none;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #fff;
+    
   }
 
   .eleksyon-logo {
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
-    margin: 0 auto;
-    display: block;
-    position: static;
   }
 }
 

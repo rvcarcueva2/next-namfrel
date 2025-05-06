@@ -22,13 +22,38 @@ export default function Header() {
 
   return (
     <header className="main-header relative z-10 bg-blue-700 text-white font-semibold">
-      {/* Mobile menu button */}
-      <div className="md:hidden flex justify-between items-center px-4 py-3">
-        <span className="text-lg font-bold">Menu</span>
-        <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+    {/* Mobile menu button */}
+    <div className="md:hidden flex justify-between items-center px-4 py-2">
+      <span className="text-lg font-bold"></span>
+      <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+    </div>
+
+    {/* Logo Section */}
+    <div className="flex items-center justify-start absolute left-4 top-1 py-2 px-4">
+      {/* Mobile Logo */}
+      {!isOpen && (
+        <div className="w-12 h-12 rounded-full overflow-hidden shadow-md bg-white p-1">
+          <img
+            src="/images/2025-NAMFREL-logo.png"
+            alt="Eleksyon Logo"
+            className="w-full h-full object-scale-down"
+          />
+        </div>
+      )}
+
+      {/* Desktop Logo */}
+      <div className="hidden md:block logo-shadow-wrapper">
+        <div className="logo-container">
+          <img
+            src="/images/2025-NAMFREL-logo.png"
+            alt="Eleksyon Logo"
+            className="eleksyon-logo"
+          />
+        </div>
       </div>
+    </div>
 
       {/* Desktop nav */}
       <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-white font-semibold">
