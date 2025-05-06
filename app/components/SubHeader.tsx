@@ -14,7 +14,7 @@ export default function SubHeader() {
   return (
     <div className="sub-header text-white font-semibold hidden md:block">
       {/* Desktop submenu */}
-      <ul className="hidden md:flex justify-center gap-8 bg-[#b00505] py-3">
+      <ul className="hidden md:flex justify-center gap-8 bg-[#dc160c] py-3">
         {links.map(({ href, label }) => (
           <li key={href}>
             <a
