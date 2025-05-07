@@ -1,86 +1,44 @@
 'use client';
-
-import { useEffect, useRef } from 'react';
-import {
-  models,
-  IEmbedConfiguration,
-  factories,
-  service,
-  Report,
-} from 'powerbi-client';
+import { useEffect, useState } from 'react';
 
 interface PowerBIEmbedProps {
-  embedUrl: string;
-  accessToken: string;
-  reportId: string;
-  pageName?: string;
+  mobileUrl: string;
+  desktopUrl: string;
+  title?: string;
+  className?: string;
 }
 
-export default function PowerBIEmbedComponent({
-  embedUrl,
-  accessToken,
-  reportId,
-  pageName = 'ReportSection1',
+export default function PowerBIEmbed({
+  mobileUrl,
+  desktopUrl,
+  title = 'Power BI Dashboard',
+  className = '',
 }: PowerBIEmbedProps) {
-  const embedContainer = useRef<HTMLDivElement>(null);
+  const [embedUrl, setEmbedUrl] = useState('');
+
+  const getIsMobile = () => window.innerWidth <= 768;
 
   useEffect(() => {
-    if (!embedContainer.current) return;
+    setEmbedUrl(getIsMobile() ? mobileUrl : desktopUrl);
 
-    const embedConfig: IEmbedConfiguration = {
-      type: 'report',
-      id: reportId,
-      embedUrl,
-      accessToken,
-      tokenType: models.TokenType.Embed,
-      settings: {
-        panes: {
-          filters: { visible: false },
-          pageNavigation: { visible: false }, // 👈 This hides the bottom navigation tabs
-        },
-        layoutType: models.LayoutType.Custom,
-        customLayout: {
-          displayOption: models.DisplayOption.FitToPage,
-        },
-      },
+    const handleResize = () => {
+      const newUrl = getIsMobile() ? mobileUrl : desktopUrl;
+      setEmbedUrl(prevUrl => (prevUrl !== newUrl ? newUrl : prevUrl));
     };
 
-    const powerbiService = new service.Service(
-      factories.hpmFactory,
-      factories.wpmpFactory,
-      factories.routerFactory
-    );
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-    powerbiService.reset(embedContainer.current);
-
-    const report = powerbiService.embed(
-      embedContainer.current,
-      embedConfig
-    ) as Report;
-
-    report.on('loaded', async () => {
-      try {
-        const pages = await report.getPages();
-        const targetPage = pages.find((p) => p.name === pageName);
-        if (targetPage) {
-          await targetPage.setActive();
-        }
-      } catch (err) {
-        console.error('Failed to set page:', err);
-      }
-    });
-  }, [embedUrl, accessToken, reportId, pageName]);
+  if (!embedUrl) return null;
 
   return (
-    <div
-      ref={embedContainer}
-      style={{
-        height: '800px',
-        width: '100%',
-        transform: 'scale(0.97)',
-        transformOrigin: 'top center',
-        marginBottom: '2rem', //
-      }}
-    />
+    <iframe
+      title={title}
+      src={embedUrl}
+      allowFullScreen
+      className={`w-full h-full border-0 ${className}`}
+      style={{ maxWidth: '100%', maxHeight: '100%' }}
+    ></iframe>
   );
 }
