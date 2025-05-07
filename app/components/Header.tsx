@@ -31,29 +31,20 @@ export default function Header() {
     </div>
 
     {/* Logo Section */}
-    <div className="flex items-center justify-start absolute left-4 top-1 py-2 px-4">
-      {/* Mobile Logo */}
-      {!isOpen && (
-        <div className="w-12 h-12 rounded-full overflow-hidden shadow-md bg-white p-1">
-          <img
-            src="/images/2025-NAMFREL-logo.png"
-            alt="Eleksyon Logo"
-            className="w-full h-full object-scale-down"
-          />
-        </div>
-      )}
+    <div className="flex items-center justify-start absolute left-4 py-2 px-4 space-x-6">
 
-      {/* Desktop Logo */}
-      <div className="hidden md:block logo-shadow-wrapper">
+      {/* NAMFREL Logo */}
+      <div className="logo-shadow-wrapper">
         <div className="logo-container">
           <img
             src="/images/2025-NAMFREL-logo.png"
             alt="Eleksyon Logo"
             className="eleksyon-logo"
           />
-        </div>
+          </div>        
+        </div>      
       </div>
-    </div>
+    
 
       {/* Desktop nav */}
       <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-white font-semibold">

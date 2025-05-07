@@ -66,16 +66,26 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 86%, 50% 100%, 0 86%);
 }
 
+/*
+.logo-container-apc {
+  z-index: 0; 
+  margin-top: -80px; 
+  clip-path: none; 
+  width: 120px;
+  height: 120px;
+  background: none;
+}
+*/
+
 @media (max-width: 768px) {
   .logo-container {
     width: 60px;
     height: 60px;
     margin: 0.5rem;
-    clip-path: none;
-    border-radius: 50%;
+    border-radius: 0;
     overflow: hidden;
     background: #fff;
-    
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
   }
 
   .eleksyon-logo {
@@ -86,6 +96,18 @@ body {
 }
 
 .eleksyon-logo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apc-logo {
   width: 100%;
   max-width: 100%;
   height: auto;
