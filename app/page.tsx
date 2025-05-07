@@ -1,8 +1,8 @@
-export default function TransmissionPage() {
+export default function ResultsPage() {
     return (
     <main className="min-h-screen w-full flex flex-col items-center justify-start p-0 bg-white">
       <div className="text-center text-[#1e0775] my-6">
-        <h1 className="text-4xl font-bold mb-2">Ballot Transmission Progress</h1>
+        <h1 className="text-4xl font-bold mb-2">Election Results Progress</h1>
         <p className="text-sm font-light">
           Results as of 2:47 PM – May 13, 2022
         </p>

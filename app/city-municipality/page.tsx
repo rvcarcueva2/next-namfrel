@@ -1,8 +1,8 @@
-export default function VotersProfilePage() {
+export default function CityMunicipalityPage() {
     return (
 <main className="min-h-screen w-full flex flex-col items-center justify-start p-0 bg-white">
       <div className="text-center text-[#1e0775] my-6">
-        <h1 className="text-4xl font-bold mb-2">Voter's Profile</h1>
+        <h1 className="text-4xl font-bold mb-2">Local Municipality Results</h1>
         <p className="text-sm font-light">
           Results as of 2:47 PM – May 13, 2022
         </p>
@@ -11,7 +11,7 @@ export default function VotersProfilePage() {
         </p>
       </div>
 
-      <div className="w-full flex-grow px-4 md:px-12 lg:px-24 mb-8"> {/* 👈 Add margin-bottom here */}
+      <div className="w-full flex-grow px-4 md:px-12 lg:px-24 mb-8"> 
         <div className="w-full h-[85vh] rounded-lg shadow overflow-hidden">
           <iframe
             title="Senatorial Race Power BI Dashboard"
@@ -25,3 +25,4 @@ export default function VotersProfilePage() {
     </main>
     );
   }
+  

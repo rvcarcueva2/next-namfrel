@@ -8,16 +8,18 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const mainLinks = [
-    { href: "/", label: "Transmission" },
+    { href: "/", label: "Results" },
+    { href: "/crowdsourcing", label: "Crowdsourcing"},
+    { href: "/transmission", label: "Transmission"},
     { href: "/analytics", label: "Analytics" },
-    { href: "/voters-profile", label: "Voter's Profile" },
+    { href: "/election-statistics", label: "Election Statistics" },
   ];
 
   const subLinks = [
-    { href: "/senate", label: "SENATE" },
-    { href: "/party-list", label: "PARTY-LIST" },
-    { href: "/provincial", label: "PROVINCIAL" },
-    { href: "/city", label: "CITY" },
+    { href: "/senate", label: "Senate" },
+    { href: "/party-list", label: "Party-list" },
+    { href: "/provincial", label: "Provincial" },
+    { href: "/city-municipality", label: "City/Municipality" },
   ];
 
   return (
