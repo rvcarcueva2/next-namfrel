@@ -2,7 +2,7 @@ export default function VotersProfilePage() {
     return (
 <main className="min-h-screen w-full flex flex-col items-center justify-start p-0 bg-white">
       <div className="text-center text-[#00397A] my-6">
-        <h1 className="text-4xl font-bold mb-2">Voter's Profile</h1>
+        <h1 className="text-4xl font-bold mb-2">Election Statistics</h1>
         <p className="text-sm font-light">
           Results as of 2:47 PM – May 13, 2022
         </p>
