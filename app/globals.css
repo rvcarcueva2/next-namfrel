@@ -71,7 +71,7 @@ body {
   z-index: 20; 
   padding-right: 40px;
   position: relative;
-  background: #FFFFFF;
+  background: #F1F1F3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,7 +116,7 @@ body {
     padding: 0;
     border-radius: 0;
     overflow: hidden;
-    background: #fff;
+    background: #f1f1f3;
   }
 
   .eleksyon-logo {
