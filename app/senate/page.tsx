@@ -1,6 +1,9 @@
 'use client';
+import { useEffect, useState } from 'react';
+import PowerBIWrapper from '../components/PowerBIWrapper';
 
 export default function SenatePage() {
+  
   return (
     <main className="min-h-screen w-full flex flex-col items-center justify-start p-0 bg-white">
       <div className="text-center text-[#00397A] my-6">
@@ -13,17 +16,15 @@ export default function SenatePage() {
         </p>
       </div>
 
-      <div className="w-full flex-grow px-4 md:px-12 lg:px-24 mb-8"> {/* 👈 Add margin-bottom here */}
-        <div className="w-full h-[85vh] rounded-lg shadow overflow-hidden">
-          <iframe
-            title="Senatorial Race Power BI Dashboard"
-            aria-label="Power BI embed showing senatorial race results"
-            src="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=3a4aded5c1db1eceb3ae"
-            allowFullScreen
-            className="w-full h-full border-0"
-          ></iframe>
+      <div className="w-full flex-grow px-4 md:px-12 lg:px-24 mb-8">
+        <div className="w-full h-[90vh] rounded-lg shadow overflow-hidden">
+          <PowerBIWrapper
+
+            desktopUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=3a4aded5c1db1eceb3ae"
+            mobileUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=e1068efd56548ea983c7"
+            reportId={''} accessToken={''} />
         </div>
       </div>
-    </main>
+    </main >
   );
 }
