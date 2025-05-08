@@ -24,6 +24,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
+        <div className="relative z-20 flex -mb-30">
+          <div className="logo-shadow-wrapper">
+            <div className="logo-container">
+              <img
+                src="/images/2025-NAMFREL-logo.png"
+                alt="Eleksyon Logo"
+                className="eleksyon-logo namfrel-logo"
+              />
+
+              <img
+                src="/images/APC-Gold_Site-Seal.png"
+                alt="APC Logo"
+                className="eleksyon-logo apc-logo"
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="header-container">
           <Header />
           <SubHeader />

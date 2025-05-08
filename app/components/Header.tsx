@@ -23,31 +23,8 @@ export default function Header() {
   ];
 
   return (
-    <header className="main-header relative z-10 bg-blue-700 text-white font-semibold">
-    {/* Mobile menu button */}
-    <div className="md:hidden flex justify-between items-center px-4 py-2">
-      <span className="text-lg font-bold"></span>
-      <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-        {isOpen ? <X size={24} /> : <Menu size={24} />}
-      </button>
-    </div>
-
-    {/* Logo Section */}
-    <div className="flex items-center justify-start absolute left-4 py-2 px-4 space-x-6">
-
-      {/* NAMFREL Logo */}
-      <div className="logo-shadow-wrapper">
-        <div className="logo-container">
-          <img
-            src="/images/2025-NAMFREL-logo.png"
-            alt="Eleksyon Logo"
-            className="eleksyon-logo"
-          />
-          </div>        
-        </div>      
-      </div>
+    <header className="main-header relative z-10 flex items-center bg-blue-700 h-25">
     
-
       {/* Desktop nav */}
       <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-white font-semibold">
         {mainLinks.map(({ href, label }) => {
@@ -65,6 +42,14 @@ export default function Header() {
           );
         })}
       </nav>
+
+      {/* Mobile menu button */}
+      <div className="md:hidden flex justify-between items-center px-4 py-2">
+        <span className="text-lg font-bold"></span>
+        <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
 
       {/* Mobile nav */}
       {isOpen && (
@@ -103,6 +88,8 @@ export default function Header() {
             })}
           </div>
         </div>
+
+      
       )}
     </header>
   );
