@@ -15,7 +15,7 @@ const links = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#00509d] text-white pt-10">
+    <footer className="bg-[#1e0775] text-white pt-10">
       <div className="max-w-[1342px] mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
 
       <div className="md:col-span-1 text-center md:text-left">
@@ -239,7 +239,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-[#b00505] mt-8 md:mt-10 text-center text-sm font-light py-4 md:py-6">
+      <div className="bg-[#dc160c] mt-8 md:mt-10 text-center text-sm font-light py-4 md:py-6">
         © 2025 All Rights Reserved
       </div>
     </footer>
