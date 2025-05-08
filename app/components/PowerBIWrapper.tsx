@@ -6,9 +6,12 @@ const PowerBIViewer = dynamic(() => import('./PowerBIViewer'), { ssr: false });
 
 interface Props {
   reportId: string;
-  embedUrl: string;
-}
+  desktopUrl: string;
+  mobileUrl: string; // Added mobileUrl as an optional property
+  accessToken: string;
+};
+
 
 export default function PowerBIWrapper(props: Props) {
-    return <PowerBIViewer accessToken={''} {...props} />;
+    return <PowerBIViewer {...props} />;
 }
