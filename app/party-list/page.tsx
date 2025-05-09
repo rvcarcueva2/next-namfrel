@@ -3,7 +3,7 @@ import PowerBIWrapper from '../components/PowerBIWrapper';
 export default function PartylistPage() {
   return (
     <main className="min-h-screen w-full flex flex-col items-center justify-start p-0 bg-white">
-      <div className="text-center text-[#1e0775] my-6">
+      <div className="text-center text-[#11349C] my-6">
         <h1 className="text-4xl font-bold mb-2">Party-List Race</h1>
         <p className="text-sm font-light">
           Results as of 2:47 PM – May 13, 2022

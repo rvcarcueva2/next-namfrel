@@ -13,6 +13,7 @@ export default function Header() {
     { href: "/transmission", label: "Transmission" },
     { href: "/analytics", label: "Analytics" },
     { href: "/election-statistics", label: "Election Statistics" },
+    { href: "/election-statistics", label: "Demographics" },
   ];
 
   const subLinks = [
@@ -30,7 +31,7 @@ export default function Header() {
           <a
             key={href}
             href={href}
-            className={`text-lg transition relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+            className={`text-lg transition relative  after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
               pathname === href ? "after:scale-x-100 font-bold" : ""
             }`}
           >
