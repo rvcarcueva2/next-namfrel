@@ -43,71 +43,127 @@ body {
   color: black;
 }
 
+/*
+.logo-spacer {
+  width: 295px;  Adjust to match logo height overlap
+  height: 0; 
+}
+*/
+
+/* Drop Shadow Around Clipped Container */
+.logo-shadow-wrapper {
+  /* position: relative; */
+  z-index: 30;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+  pointer-events: none; 
+}
+
+/*
+.logo-container-wrapper {
+  z-index: 20;
+}
+*/
+
 /* Logo Container - Responsive */
 .logo-container {
-  width: 100%;
-  max-width: 295px;
-  height: auto;
-  background: #ffffff;
-  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
-  box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.25);
+  width: 295px;
+  height: 158px;
+  z-index: 20; 
+  padding-right: 40px;
+  position: relative;
+  background: #F1F1F3;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  z-index: 30;
-  position: relative;
-  margin-bottom: -85px;
-  padding: 1rem;
-}
-
-@media (max-width: 768px) {
-  .logo-container {
-    max-width: 220px;
-    margin-bottom: -60px;
-    padding: 0.5rem;
-  }
+  pointer-events: none; 
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
 }
 
 .eleksyon-logo {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+  /* position: relative; */
   object-fit: contain;
-  position: relative;
-  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Header Styles */
-.header-container {
-  margin-top: 31px;
-  position: relative;
-  z-index: 10;
+.namfrel-logo {
+  width: 85%;
+  max-height: 120px;
+  margin-right: 10px;
+}
+
+.apc-logo {
+  width: 70%;
+  max-height: 120px;
+}
+
+@media (max-width: 768px) {
+  .logo-container-wrapper {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    clip-path: none;
+    background: white;
+  }
+
+  .logo-container {
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    overflow: hidden;
+    background: #f1f1f3;
+  }
+
+  .eleksyon-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .header-container {
+    margin-left: 0;
+  }
+
 }
 
 /* Main Header - Responsive */
 .main-header {
   width: 100%;
-  background-color: #00509d;
+  background-color: #1e0775;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  height: 5rem; /* Adjusted height */
+  z-index: 30;
+  position: relative;
+  padding-left: 150px;
 }
 
 @media (max-width: 768px) {
   .main-header {
     flex-direction: column;
     align-items: stretch;
+    height: auto;
   }
 }
 
 /* Sub Header - Responsive */
 .sub-header {
   width: 100%;
-  background-color: #b00505;
+  height: 5rem;
+  background-color: #dc160c;
   box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.25);
-  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 150px;
+  z-index: 23;
+  position: relative;
 }
 
 @media (max-width: 768px) {

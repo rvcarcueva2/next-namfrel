@@ -1,76 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-
-const links = [
-  { label: "Results", href: "/results" },
-  { label: "Voter's Profile", href: "/voters-profile" },
-  { label: "Senate", href: "/senate" },
-  { label: "Party-list", href: "/party-list" },
-  { label: "Provincial", href: "/provincial" },
-  { label: "City", href: "/city" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-];
 
 const Footer = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [responseMsg, setResponseMsg] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setResponseMsg("");
-
-    try {
-      const res = await fetch("/api/form", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await res.json();
-      
-      if (res.ok) {
-        setResponseMsg("Thank you! Your message has been sent.");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setResponseMsg(data.message || "Something went wrong.");
-      }
-    } catch (error) {
-      setResponseMsg("Failed to submit form. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
-    <footer className="bg-[#00509d] text-white pt-10">
-      <div className="max-w-[1342px] mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
+    <footer className="bg-[#190075] text-white pt-10">
+      <div className="max-w-[1342px] mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
 
-        <div className="md:col-span-1">
-          <div className="flex flex-col md:flex-row items-center gap-4 mb-6">
-            <Image
-              src="/images/namfrel-logo.png"
-              alt="NAMFREL Logo"
-              width={100}
-              height={96}
-              className="w-24 md:w-28 object-contain"
-            />
-            <Image
-              src="/images/apc-logo.png"
-              alt="APC Logo"
-              width={100}
-              height={96}
-              className="w-24 md:w-28 object-contain"
-            />
-          </div>
-          
+        <div className="md:col-span-1 text-center md:text-left">
+          <h3 className="text-base font-bold mb-4">Contact Us</h3>
           <div className="space-y-4 text-sm">
             <div className="flex items-center gap-3 justify-center md:justify-start">
               <svg
@@ -87,28 +24,99 @@ const Footer = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <p className="text-left">
+              <span>
                 Unit 601, DMG Center, <br />
                 Domingo M. Guevara St. Brgy. Mauway, <br />
                 Mandaluyong City, Philippines
-              </p>
+              </span>
             </div>
             
             <div className="flex items-center gap-3 justify-center md:justify-start">
               <svg
+                className="w-6 h-6 flex-shrink-0"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 fill="#FDD854"
                 viewBox="0 0 24 24"
               >
-                <path d="M12.017 6.995c-2.306 0-4.534.408-6.215 1.507-1.737 1.135-2.788 2.944-2.797 5.451a4.78 4.78 0 0 0 .01.62c.015.193.047.512.138.763a2.557 2.557 0 0 0 2.579 1.677l1.578.001a2.685 2.685 0 0 0 2.685-2.685v-.645a.684.684 0 0 1 .684-.684h2.647a.686.686 0 0 1 .686.687v.646c0 .711.284 1.394.787 1.897.478.478 1.101.787 1.847.787h1.647a2.555 2.555 0 0 0 2.575-1.674c.09-.25.123-.57.137-.763.015-.2.022-.433.01-.617-.002-2.508-1.049-4.32-2.785-5.458-1.68-1.1-3.907-1.51-6.213-1.51Z"/>
+                <path d="M7.978 4a2.553 2.553 0 0 0-1.926.877C4.233 6.7 3.699 8.751 4.153 10.814c.44 1.995 1.778 3.893 3.456 5.572 1.68 1.679 3.577 3.018 5.57 3.459 2.062.456 4.115-.073 5.94-1.885a2.556 2.556 0 0 0 .001-3.861l-1.21-1.21a2.689 2.689 0 0 0-3.802 0l-.617.618a.806.806 0 0 1-1.14 0l-1.854-1.855a.807.807 0 0 1 0-1.14l.618-.62a2.692 2.692 0 0 0 0-3.803l-1.21-1.211A2.555 2.555 0 0 0 7.978 4Z"/>
               </svg>
-              <span>0912345678</span>
+              <span>(+63) 939 110 2872 (Smart)</span>
+            </div>
+            
+            <div className="flex items-center gap-3 justify-center md:justify-start">
+            <svg
+              className="w-6 h-6 flex-shrink-0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="#FDD854"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7.978 4a2.553 2.553 0 0 0-1.926.877C4.233 6.7 3.699 8.751 4.153 10.814c.44 1.995 1.778 3.893 3.456 5.572 1.68 1.679 3.577 3.018 5.57 3.459 2.062.456 4.115-.073 5.94-1.885a2.556 2.556 0 0 0 .001-3.861l-1.21-1.21a2.689 2.689 0 0 0-3.802 0l-.617.618a.806.806 0 0 1-1.14 0l-1.854-1.855a.807.807 0 0 1 0-1.14l.618-.62a2.692 2.692 0 0 0 0-3.803l-1.21-1.211A2.555 2.555 0 0 0 7.978 4Z"/>
+            </svg>
+              <span className="break-words text-left">(+63) 977 241 7080 (Globe)</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="md:col-span-1 pt-9">
+          <div className="space-y-4 text-sm">
+           <div className="flex items-center gap-3 justify-center md:justify-start">
+           <svg 
+            className="w-6 h-6 flex-shrink-0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="#FDD854"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fillRule="evenodd"
+              d="M11 4a1 1 0 0 0-1 1v10h10.459l.522-3H16a1 1 0 1 1 0-2h5.33l.174-1H16a1 1 0 1 1 0-2h5.852l.117-.67v-.003A1.983 1.983 0 0 0 20.06 4H11ZM9 18c0-.35.06-.687.17-1h11.66c.11.313.17.65.17 1v1a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1v-1Zm-6.991-7a17.8 17.8 0 0 0 .953 6.1c.198.54 1.61.9 2.237.9h1.34c.17 0 .339-.032.495-.095a1.24 1.24 0 0 0 .41-.27c.114-.114.2-.25.254-.396a1.01 1.01 0 0 0 .055-.456l-.242-2.185a1.073 1.073 0 0 0-.395-.71 1.292 1.292 0 0 0-.819-.286H5.291c-.12-.863-.17-1.732-.145-2.602-.024-.87.024-1.74.145-2.602H6.54c.302 0 .594-.102.818-.286a1.07 1.07 0 0 0 .396-.71l.24-2.185a1.01 1.01 0 0 0-.054-.456 1.088 1.088 0 0 0-.254-.397 1.223 1.223 0 0 0-.41-.269A1.328 1.328 0 0 0 6.78 4H4.307c-.3-.001-.592.082-.838.238a1.335 1.335 0 0 0-.531.634A17.127 17.127 0 0 0 2.008 11Z"
+              clipRule="evenodd"/>
+          </svg>
+              <span>(632) 8451 1586</span>
+            </div>
+            
+            <div className="flex items-center gap-3 justify-center md:justify-start">
+            <svg 
+              className="w-6 h-6 flex-shrink-0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="#FDD854"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fillRule="evenodd"
+                d="M11 4a1 1 0 0 0-1 1v10h10.459l.522-3H16a1 1 0 1 1 0-2h5.33l.174-1H16a1 1 0 1 1 0-2h5.852l.117-.67v-.003A1.983 1.983 0 0 0 20.06 4H11ZM9 18c0-.35.06-.687.17-1h11.66c.11.313.17.65.17 1v1a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1v-1Zm-6.991-7a17.8 17.8 0 0 0 .953 6.1c.198.54 1.61.9 2.237.9h1.34c.17 0 .339-.032.495-.095a1.24 1.24 0 0 0 .41-.27c.114-.114.2-.25.254-.396a1.01 1.01 0 0 0 .055-.456l-.242-2.185a1.073 1.073 0 0 0-.395-.71 1.292 1.292 0 0 0-.819-.286H5.291c-.12-.863-.17-1.732-.145-2.602-.024-.87.024-1.74.145-2.602H6.54c.302 0 .594-.102.818-.286a1.07 1.07 0 0 0 .396-.71l.24-2.185a1.01 1.01 0 0 0-.054-.456 1.088 1.088 0 0 0-.254-.397 1.223 1.223 0 0 0-.41-.269A1.328 1.328 0 0 0 6.78 4H4.307c-.3-.001-.592.082-.838.238a1.335 1.335 0 0 0-.531.634A17.127 17.127 0 0 0 2.008 11Z"
+                clipRule="evenodd"/>
+            </svg>
+              <span>(632) 8736 0969</span>
+            </div>
+
+            <div className="flex items-center gap-3 justify-center md:justify-start">
+            <svg 
+              className="w-6 h-6 flex-shrink-0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="#FDD854"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fillRule="evenodd"
+                d="M11 4a1 1 0 0 0-1 1v10h10.459l.522-3H16a1 1 0 1 1 0-2h5.33l.174-1H16a1 1 0 1 1 0-2h5.852l.117-.67v-.003A1.983 1.983 0 0 0 20.06 4H11ZM9 18c0-.35.06-.687.17-1h11.66c.11.313.17.65.17 1v1a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1v-1Zm-6.991-7a17.8 17.8 0 0 0 .953 6.1c.198.54 1.61.9 2.237.9h1.34c.17 0 .339-.032.495-.095a1.24 1.24 0 0 0 .41-.27c.114-.114.2-.25.254-.396a1.01 1.01 0 0 0 .055-.456l-.242-2.185a1.073 1.073 0 0 0-.395-.71 1.292 1.292 0 0 0-.819-.286H5.291c-.12-.863-.17-1.732-.145-2.602-.024-.87.024-1.74.145-2.602H6.54c.302 0 .594-.102.818-.286a1.07 1.07 0 0 0 .396-.71l.24-2.185a1.01 1.01 0 0 0-.054-.456 1.088 1.088 0 0 0-.254-.397 1.223 1.223 0 0 0-.41-.269A1.328 1.328 0 0 0 6.78 4H4.307c-.3-.001-.592.082-.838.238a1.335 1.335 0 0 0-.531.634A17.127 17.127 0 0 0 2.008 11Z"
+                clipRule="evenodd"/>
+            </svg>
+              <span>(632) 8788 3484</span>
             </div>
             
             <div className="flex items-center gap-3 justify-center md:justify-start">
               <svg
+                className="w-6 h-6 flex-shrink-0"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -118,25 +126,9 @@ const Footer = () => {
                 <path d="M2.038 5.61A2.01 2.01 0 0 0 2 6v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6c0-.12-.01-.238-.03-.352l-.866.65-7.89 6.032a2 2 0 0 1-2.429 0L2.884 6.288l-.846-.677Z"/>
                 <path d="M20.677 4.117A1.996 1.996 0 0 0 20 4H4c-.225 0-.44.037-.642.105l.758.607L12 10.742 19.9 4.7l.777-.583Z"/>
               </svg>
-              <span className="break-words text-left">namfrelsecretariat@namfrel.org.ph</span>
+              <span >namfrelsecretariat@namfrel.org.ph</span>
             </div>
           </div>
-        </div>
-
-        <div className="md:col-span-1 text-center md:text-left">
-          <h3 className="text-base font-bold mb-4">Quick Links</h3>
-          <ul className="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
-            {links.map(({ label, href }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="inline-block w-full py-1 hover:text-[#fdd854] transition-colors duration-200"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
 
         <div className="md:col-span-1 text-center md:text-left">
@@ -223,59 +215,14 @@ const Footer = () => {
             </a>
           </div>
         </div>
-
-        <div className="md:col-span-1">
-          <h3 className="text-base font-bold mb-4 text-center md:text-left">Contact Us</h3>
-          <form onSubmit={handleSubmit} className="space-y-3 text-sm">
-            <div className="flex flex-col gap-2">
-              <input
-                type="text"
-                placeholder="Name (Optional)"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-3 py-2 rounded bg-white/90 text-black shadow-md focus:ring-2 focus:ring-[#fdd854] outline-none"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-3 py-2 rounded bg-white/90 text-black shadow-md focus:ring-2 focus:ring-[#fdd854] outline-none"
-                required
-              />
-            </div>
-            <textarea
-              placeholder="Message"
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full h-32 px-3 py-2 rounded bg-white/90 text-black shadow-md focus:ring-2 focus:ring-[#fdd854] outline-none"
-              required
-            />
-            <div className="flex justify-end">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="cursor-pointer bg-[#ffca0a] text-[#111928] px-5 py-2 rounded shadow-md hover:bg-[#ffd33d] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Submitting..." : "Submit"}
-              </button>
-            </div>
-            {responseMsg && (
-              <p className={`text-sm text-center ${
-                responseMsg.includes("Thank") ? "text-white" : "text-red-300"
-              }`}>
-                {responseMsg}
-              </p>
-            )}
-          </form>
-        </div>
       </div>
 
-      <div className="bg-[#b00505] mt-8 md:mt-10 text-center text-sm font-light py-4 md:py-6">
-        © 2025 All Rights Reserved
+      <div className="bg-[#FD0000] mt-8 md:mt-10 text-center text-sm font-light py-4 md:py-6">
+        <div><p>In Partnership with Asia Pacific College.</p> </div>
+        <div className="mt-1"><p>© 2025 All Rights Reserved.</p> </div>
       </div>
     </footer>
   );
 };
 
-export default Footer;
+export default Footer;  

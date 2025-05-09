@@ -8,28 +8,24 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const mainLinks = [
-    { href: "/", label: "Transmission" },
+    { href: "/", label: "Results" },
+    { href: "/crowdsourcing", label: "Crowdsourcing"},
+    { href: "/transmission", label: "Transmission"},
     { href: "/analytics", label: "Analytics" },
-    { href: "/voters-profile", label: "Voter's Profile" },
+    { href: "/election-statistics", label: "Election Statistics" },
   ];
 
   const subLinks = [
-    { href: "/senate", label: "SENATE" },
-    { href: "/party-list", label: "PARTY-LIST" },
-    { href: "/provincial", label: "PROVINCIAL" },
-    { href: "/city", label: "CITY" },
+    { href: "/senate", label: "Senate" },
+    { href: "/house-of-representatives", label: "House of Representatives" },
+    { href: "/party-list", label: "Party-list" },
+    { href: "/provincial", label: "Provincial" },
+    { href: "/city-municipality", label: "City/Municipality" },
   ];
 
   return (
-    <header className="main-header relative z-10 bg-blue-700 text-white font-semibold">
-      {/* Mobile menu button */}
-      <div className="md:hidden flex justify-between items-center px-4 py-3">
-        <span className="text-lg font-bold">Menu</span>
-        <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
+    <header className="main-header relative z-10 flex items-center bg-blue-700 h-25">
+    
       {/* Desktop nav */}
       <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-white font-semibold">
         {mainLinks.map(({ href, label }) => {
@@ -47,6 +43,14 @@ export default function Header() {
           );
         })}
       </nav>
+
+      {/* Mobile menu button */}
+      <div className="md:hidden flex justify-between items-center px-4 py-2">
+        <span className="text-lg font-bold"></span>
+        <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
 
       {/* Mobile nav */}
       {isOpen && (
@@ -85,6 +89,8 @@ export default function Header() {
             })}
           </div>
         </div>
+
+      
       )}
     </header>
   );
