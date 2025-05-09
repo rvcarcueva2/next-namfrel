@@ -17,8 +17,8 @@ export default function AnalyticsPage() {
         <div className="w-full h-[90vh] rounded-lg shadow overflow-hidden">
           <PowerBIWrapper
             
-            desktopUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=3a4aded5c1db1eceb3ae"
-            mobileUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=e1068efd56548ea983c7" 
+            desktopUrl="https://app.powerbi.com/view?r=eyJrIjoiZDIwODg2MDYtMGRkNC00MThkLWFjNjctOWMzZjJhYmFlYzdjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=7b499ad574a067559754"
+            mobileUrl="https://app.powerbi.com/view?r=eyJrIjoiZDIwODg2MDYtMGRkNC00MThkLWFjNjctOWMzZjJhYmFlYzdjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=17775aab90078b52206e" 
             reportId={''} accessToken={''}          />
         </div>
       </div>

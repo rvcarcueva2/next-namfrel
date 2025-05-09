@@ -17,6 +17,7 @@ export default function Header() {
 
   const subLinks = [
     { href: "/senate", label: "Senate" },
+    { href: "/house-of-representatives", label: "House of Representatives" },
     { href: "/party-list", label: "Party-list" },
     { href: "/provincial", label: "Provincial" },
     { href: "/city-municipality", label: "City/Municipality" },

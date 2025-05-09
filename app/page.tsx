@@ -5,7 +5,7 @@ export default function ResultsPage() {
   return (
     <main className="min-h-screen w-full flex flex-col items-center justify-start p-0 bg-white">
       <div className="text-center text-[#1e0775] my-6">
-        <h1 className="text-4xl font-bold mb-2">Election Results Progress</h1>
+        <h1 className="text-4xl font-bold mb-2">Senatorial Race</h1>
         <p className="text-sm font-light">
           Results as of 2:47 PM – May 13, 2022
         </p>
@@ -14,12 +14,12 @@ export default function ResultsPage() {
         </p>
       </div>
 
-      <div className="w-full flex-grow px-4 md:px-12 lg:px-24 mb-8"> {/* 👈 Add margin-bottom here */}
+      <div className="w-full flex-grow px-4 md:px-12 lg:px-24 mb-8"> 
         <div className="w-full h-[90vh] rounded-lg shadow overflow-hidden">
           <PowerBIWrapper
             
-            desktopUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=08315ad4a29fc354bbdb"
-            mobileUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=e1068efd56548ea983c7" 
+            desktopUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=3a4aded5c1db1eceb3ae"
+            mobileUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=9a046bea605b04125819" 
             reportId={''} accessToken={''}          />
         </div>
       </div>
