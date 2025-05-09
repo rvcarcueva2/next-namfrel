@@ -9,7 +9,7 @@ export default function AnalyticsPage() {
           Results as of 2:47 PM – May 13, 2022
         </p>
         <p className="text-sm px-5 mt-1">
-          The analytics and insights presented are based from the PARTIAL and UNOFFICIAL results for the 2025 Philippine Midterm Elections. Current results may need to be refreshed for a live update.
+          The analytics and insights presented are based from the PARTIAL and UNOFFICIAL result for the 2025 Philippine Midterm Elections. Current results may need to be refreshed for a live update.
         </p>
       </div>
 

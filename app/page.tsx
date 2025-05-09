@@ -10,7 +10,7 @@ export default function SenatePage() {
           Results as of 2:47 PM – May 13, 2022
         </p>
         <p className="text-xs md:px-4 mt-1">
-          This is a PARTIAL and UNOFFICIAL results for the 2025 Philippine Midterm Elections. Current results may need to be refreshed for a live update.
+          This is a PARTIAL and UNOFFICIAL result for the 2025 Philippine Midterm Elections. Current results may need to be refreshed for a live update.
         </p>
       </div>
 

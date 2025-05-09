@@ -44,8 +44,9 @@ body {
 .logo-container {
   width: 110%;
   height: 100%;
-  padding-right: 40px;
-  margin-left: -25px;
+  padding-left: 15px;
+  padding-right: 50px;
+  margin-left: -15px;
   background: #F1F1F3;
   display: flex;
   align-items: center;
@@ -54,8 +55,8 @@ body {
 }
 
 .namfrel-logo {
-  width: 85%;
-  max-height: 140px;
+  width: 65%;
+  max-height: 130px;
   object-fit: contain;
 }
 
@@ -74,7 +75,7 @@ body {
   }
 
   .logo-container {
-    padding-right: 20px;
+    padding-right: 40px;
   }
 
   .namfrel-logo {
