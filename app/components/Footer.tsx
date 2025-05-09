@@ -1,38 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-
-const links = [
-  { label: "Results", href: "/results" },
-  { label: "Voter's Profile", href: "/voters-profile" },
-  { label: "Senate", href: "/senate" },
-  { label: "Party-list", href: "/party-list" },
-  { label: "Provincial", href: "/provincial" },
-  { label: "City", href: "/city" },
-  { label: "Privacy Policy", href: "/privacy-policy" },
-];
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1e0775] text-white pt-10">
+    <footer className="bg-[#190075] text-white pt-10">
       <div className="max-w-[1342px] mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
-
-      <div className="md:col-span-1 text-center md:text-left">
-          <h3 className="text-base font-bold mb-4">Quick Links</h3>
-          <ul className="grid grid-cols-2 md:grid-cols-1 gap-2 text-sm">
-            {links.map(({ label, href }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="inline-block w-full py-1 hover:text-[#fdd854] transition-colors duration-200"
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
 
         <div className="md:col-span-1 text-center md:text-left">
           <h3 className="text-base font-bold mb-4">Contact Us</h3>
@@ -52,11 +24,11 @@ const Footer = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <p className="text-left">
+              <span>
                 Unit 601, DMG Center, <br />
                 Domingo M. Guevara St. Brgy. Mauway, <br />
                 Mandaluyong City, Philippines
-              </p>
+              </span>
             </div>
             
             <div className="flex items-center gap-3 justify-center md:justify-start">
@@ -239,8 +211,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-[#dc160c] mt-8 md:mt-10 text-center text-sm font-light py-4 md:py-6">
-        © 2025 All Rights Reserved
+      <div className="bg-[#FD0000] mt-8 md:mt-10 text-center text-sm font-light py-4 md:py-6">
+        <div><p>In Partnership with Asia Pacific College.</p> </div>
+        <div className="mt-1"><p>© 2025 All Rights Reserved.</p> </div>
       </div>
     </footer>
   );
