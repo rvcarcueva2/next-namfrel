@@ -14,21 +14,19 @@ export default function SubHeader() {
 
   return (
     <div className="sub-header text-white font-semibold hidden md:block">
-      {/* Desktop submenu */}
-      <ul className="hidden md:flex justify-center gap-8 bg-[#dc160c] py-3">
+      <nav className="flex justify-center gap-8 bg-[#dc160c] py-3">
         {links.map(({ href, label }) => (
-          <li key={href}>
-            <a
-              href={href}
-              className={`text-lg transition transform active:-translate-y-0.5 relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100 ${
-                pathname === href ? "after:scale-x-100 font-bold" : ""
-              }`}
-            >
-              {label}
-            </a>
-          </li>
+          <a
+            key={href}
+            href={href}
+            className={`text-lg transition relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              pathname === href ? "after:scale-x-100 font-bold" : ""
+            }`}
+          >
+            {label}
+          </a>
         ))}
-      </ul>
+      </nav>
     </div>
   );
 }
