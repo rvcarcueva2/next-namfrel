@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Crowdsourcing | NAMFREL",
+  title: "Demographics | NAMFREL",
   description: "NAMFREL Website",
 };
 
