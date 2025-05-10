@@ -39,7 +39,7 @@ export default function ElectionStatisticsPage() {
 
   return (
     <main className="min-h-screen w-full flex flex-col items-center justify-start p-0 bg-white">
-      <div className="text-center text-[#1e0775] my-6">
+      <div className="text-center text-[#11349C] my-6">
         <h1 className="text-4xl font-bold mb-2">Election Statistics</h1>
         <p className="text-sm font-light">
           Results as of{' '}
@@ -50,7 +50,7 @@ export default function ElectionStatisticsPage() {
           )}
         </p>
         <p className="text-xs md:px-4 mt-1">
-          This is a PARTIAL and UNOFFICIAL results for the 2025 Philippine Midterm Elections. Current results may need to be refreshed for a live update.
+          This is a PARTIAL and UNOFFICIAL result for the 2025 Philippine Midterm Elections. Current results may need to be refreshed for a live update.
         </p>
       </div>
 

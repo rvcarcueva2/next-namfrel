@@ -217,8 +217,8 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-[#FD0000] mt-8 md:mt-10 text-center text-sm font-light py-4 md:py-6">
-        <div><p>In Partnership with Asia Pacific College.</p> </div>
+      <div className="bg-[#FD0000] mt-8 md:mt-10 text-center text-sm font-light py-2 md:py-4">
+        <div><p>In Partnership with Asia Pacific College</p> </div>
         <div className="mt-1"><p>© 2025 All Rights Reserved.</p> </div>
       </div>
     </footer>

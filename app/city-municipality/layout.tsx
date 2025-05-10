@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "City/Municipality| NAMFREL",
+  title: "City/Municipality | NAMFREL",
   description: "NAMFREL Website",
 };
 
