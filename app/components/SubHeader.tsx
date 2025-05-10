@@ -14,7 +14,7 @@ export default function SubHeader() {
 
   return (
     <div className="sub-header text-white font-semibold hidden md:block">
-      <nav className="flex justify-center gap-8 bg-[#dc160c] py-3">
+      <nav className="flex justify-center gap-8 bg-[#dc160c] py-3 pr-8 transform translate-x-4">
         {links.map(({ href, label }) => (
           <a
             key={href}

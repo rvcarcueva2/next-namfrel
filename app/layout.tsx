@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
-        <div className="mt-8 mb-10 mx-auto max-w-screen-2xl px-4">
+        <div className="mt-8 mb-18 mx-auto max-w-screen-2xl px-4">
           <div className="logo-container-wrapper">
             <div className="logo-container">
               <img
