@@ -45,7 +45,7 @@ export default function CityMunicipalityPage() {
   return (
     <main className="min-h-screen w-full flex flex-col items-center justify-start p-0 bg-white">
       <div className="text-center text-[#11349C] my-6">
-        <h1 className="text-4xl font-bold mb-2">City/Municipal Results</h1>
+        <h1 className="text-4xl font-bold mb-2">City/Municipality Results</h1>
         <div className="text-m">
             {loading ? (
               <p>Loading...</p>
