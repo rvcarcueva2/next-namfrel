@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const mainLinks = [
     { href: "/", label: "Results" },
@@ -24,32 +25,48 @@ export default function Header() {
     { href: "/city-municipality", label: "City/Municipality" },
   ];
 
+  useEffect(() => {
+    const handleResize = () => {
+      const contentWidth = window.innerWidth - 295; // Subtract logo width
+      const minRequiredWidth = 1200; // Minimum width needed for all tabs
+      setIsCollapsed(contentWidth < minRequiredWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <header className="main-header">
-      <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-white font-semibold">
-        {mainLinks.map(({ href, label }) => (
-          <a
-            key={href}
-            href={href}
-            className={`text-lg transition relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-              pathname === href ? "after:scale-x-100 font-bold" : ""
-            }`}
+      {!isCollapsed ? (
+        <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-white font-semibold pr-8">
+          {mainLinks.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              className={`text-lg transition relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+                pathname === href ? "after:scale-x-100 font-bold" : ""
+              }`}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+      ) : (
+        <div className="flex items-center justify-center z-50">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-white hover:text-gray-200 transition p-2"
+            aria-label="Toggle menu"
           >
-            {label}
-          </a>
-        ))}
-      </nav>
-      <div className="md:hidden flex items-center justify-end z-50">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-white hover:text-gray-200 transition p-2"
-          aria-label="Toggle menu"
-        >
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
-        </button>
-      </div>
+            {isOpen ? <X size={32} /> : <Menu size={32} />}
+          </button>
+        </div>
+      )}
+
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[#1e0775] shadow-lg z-40">
+        <div className="absolute top-full left-0 w-full bg-[#1e0775] shadow-lg z-40">
           <div className="px-4 py-4 space-y-2">
             {mainLinks.map(({ href, label }) => (
               <a
@@ -79,5 +96,5 @@ export default function Header() {
         </div>
       )}
     </header>
-);
+  );
 }
