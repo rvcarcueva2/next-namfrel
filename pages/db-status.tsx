@@ -1,4 +1,3 @@
-// pages/next-namfrel.tsx
 import { useEffect, useState } from 'react'
 import { supabase } from '../lib/supabaseClient'
 
@@ -7,7 +6,7 @@ export default function NextNamfrel() {
 
   useEffect(() => {
     const checkConnection = async () => {
-      const { data, error } = await supabase.from('candidates').select('*').limit(1)
+      const { data, error } = await supabase.from('results_db').select('*').limit(1)
       if (error) {
         console.error('Database connection error:', error)
         setStatus('❌ Connection Failed')
