@@ -8,14 +8,16 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const mainLinks = [
-    { href: "/", label: "Results" },
-    { href: "/crowdsourcing", label: "Crowdsourcing" },
-    { href: "/transmission", label: "Transmission" },
-    { href: "/analytics", label: "Analytics" },
-    { href: "/election-statistics", label: "Election Statistics" },
-    { href: "/demographics", label: "Demographics" },
-  ];
+const mainLinks = [
+  { href: "/", label: "Results", target: "_self" },
+  { href: "/crowdsourcing", label: "Crowdsourcing", target: "_self" },
+  { href: "/transmission", label: "Transmission", target: "_self" },
+  { href: "/analytics", label: "Analytics", target: "_self" },
+  { href: "/election-statistics", label: "Election Statistics", target: "_self" },
+  { href: "/demographics", label: "Demographics", target: "_self" },
+  { href: "https://www.arcgis.com/apps/dashboards/5b6d5d0a3ac94cb59db4767a447d6bc7", label: "Voter Density Map"},
+];
+
 
   const subLinks = [
     { href: "/senate", label: "Senate" },

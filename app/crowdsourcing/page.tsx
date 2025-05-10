@@ -27,7 +27,7 @@ export default function CrowdsourcingPage() {
 
 
         if (!data) {
-          throw new Error('Results as of -')
+          throw new Error('Result as of (2022 TEST DATA)')               
         }
 
         setLatest(data)
@@ -44,7 +44,7 @@ export default function CrowdsourcingPage() {
 
   return (
     <main className="min-h-screen w-full flex flex-col items-center justify-start p-0 bg-white">
-      <div className="text-center text-[#1e0775] my-6">
+      <div className="text-center text-[#11349C] my-6">
         <h1 className="text-4xl font-bold mb-2">Crowdsourcing</h1>
         <div className="text-m">
             {loading ? (
@@ -60,14 +60,8 @@ export default function CrowdsourcingPage() {
         </p>
       </div>
 
-      <div className="w-full flex-grow px-4 md:px-12 lg:px-24 mb-8"> {/* 👈 Add margin-bottom here */}
-        <div className="w-full h-[90vh] rounded-lg shadow overflow-hidden">
-          <PowerBIWrapper
-
-            desktopUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=3a4aded5c1db1eceb3ae"
-            mobileUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=e1068efd56548ea983c7"
-            reportId={''} accessToken={''} />
-        </div>
+      <div className="text-center text-5xl font-bold text-[#11349C] m-50 md:">
+        <p>NO DATA AVAILABLE FOR 2022 ELECTIONS</p>
       </div>
     </main>
   );

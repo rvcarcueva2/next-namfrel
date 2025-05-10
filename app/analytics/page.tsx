@@ -27,7 +27,7 @@ export default function AnalyticsPage() {
 
 
         if (!data) {
-          throw new Error('Results as of -')               
+          throw new Error('Result as of (2022 TEST DATA)')               
         }
 
         setLatest(data)
@@ -55,19 +55,12 @@ export default function AnalyticsPage() {
             latest?.created_at ? <Timestamp value={latest.created_at} /> : 'Loading...'
             ) : null}
         </div>
-        <p className="text-m px-[15px] md:px-8  mt-1">
+        <p className="text-m px-[15px] md:px-8 mt-1">
           These are <strong>PARTIAL</strong> and <strong>UNOFFICIAL</strong> results of the 2025 Philippine Midterm Elections.<br></br>Use the map or list to explore results by location. Refresh the page for the most recent updates. 
         </p>
-
       </div>
-
-      <div className="w-full flex-grow px-4 md:px-12 lg:px-24 mb-8">
-        <div className="w-full h-[90vh] rounded-lg shadow overflow-hidden">
-          <PowerBIWrapper
-            desktopUrl="https://app.powerbi.com/view?r=eyJrIjoiZDIwODg2MDYtMGRkNC00MThkLWFjNjctOWMzZjJhYmFlYzdjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=7b499ad574a067559754"
-            mobileUrl="https://app.powerbi.com/view?r=eyJrIjoiZDIwODg2MDYtMGRkNC00MThkLWFjNjctOWMzZjJhYmFlYzdjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=17775aab90078b52206e"
-            reportId={''} accessToken={''} />
-        </div>
+            <div className="text-center text-5xl font-bold text-[#11349C] m-50 md:">
+        <p>NO DATA AVAILABLE FOR 2022 ELECTIONS</p>
       </div>
     </main>
   );

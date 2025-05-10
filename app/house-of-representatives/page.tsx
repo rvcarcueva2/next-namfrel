@@ -10,7 +10,6 @@ type Record = {
   created_at: string
 }
 
-
 export default function TransmissionPage() {
   const [latest, setLatest] = useState<Record | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -28,7 +27,7 @@ export default function TransmissionPage() {
 
 
         if (!data) {
-          throw new Error('Results as of -')
+          throw new Error('Result as of (2022 TEST DATA)')               
         }
 
         setLatest(data)

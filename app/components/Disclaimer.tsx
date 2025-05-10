@@ -2,7 +2,7 @@
 
 export default function Disclaimer() {
     return (
-        <div className="disclaimer text-center text-sm text-gray-500 bg-white backdrop-white mb-4">
+        <div className="disclaimer text-center text-sm px-4 md:px-6 text-gray-500 bg-white backdrop-white mb-4">
             <p>
              For best viewing experience:  
             <br />

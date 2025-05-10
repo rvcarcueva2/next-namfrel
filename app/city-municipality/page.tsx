@@ -27,7 +27,7 @@ export default function CityMunicipalityPage() {
 
 
         if (!data) {
-          throw new Error('Results as of -')               
+          throw new Error('Result as of (2022 TEST DATA)')               
         }        
 
         setLatest(data)
