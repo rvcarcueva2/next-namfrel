@@ -13,8 +13,9 @@ type Record = {
 export default function CityMunicipalityPage() {
   const [latest, setLatest] = useState<Record | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
+ useEffect(() => {
     const load = async () => {
       try {
         const { data, error } = await supabase
@@ -24,13 +25,17 @@ export default function CityMunicipalityPage() {
           .limit(1)
           .single()
 
-        if (error) {
-          throw error
+
+        if (!data) {
+          throw new Error('Waiting for result.')
         }
 
         setLatest(data)
-      } catch (error: any) {
-        setError('Failed to fetch the latest data')
+        setError(null)
+      } catch (err: any) {
+        setError(err.message)
+      } finally {
+        setLoading(false)
       }
     }
 
@@ -41,23 +46,23 @@ export default function CityMunicipalityPage() {
     <main className="min-h-screen w-full flex flex-col items-center justify-start p-0 bg-white">
       <div className="text-center text-[#11349C] my-6">
         <h1 className="text-4xl font-bold mb-2">City/Municipal Results</h1>
-        <p className="text-sm font-light">
-          Results as of{' '}
-          {error ? (
-            <span className="text-red-500">{error}</span>
-          ) : (
-            latest?.created_at ? <Timestamp value={latest.created_at} /> : 'Loading...'
-          )}
-        </p>
-        <p className="text-xs md:px-4 mt-1">
-          This is a PARTIAL and UNOFFICIAL result for the 2025 Philippine Midterm Elections. Current results may need to be refreshed for a live update.
+        <div className="text-m">
+            {loading ? (
+              <p>Loading...</p>
+            ) : error ? (
+              <p style={{ color: 'red' }}>{error}</p>
+            ) : latest ? (
+              <p>Results as of {new Date(latest.created_at).toLocaleString()}</p>
+            ) : null}
+        </div>
+        <p className="text-m px-[15px] md:px-8  mt-1">
+          These are <strong>PARTIAL</strong> and <strong>UNOFFICIAL</strong> results of the 2025 Philippine Midterm Elections.<br></br>Choose a region or province to display the election results. Refresh the page for the most recent updates. 
         </p>
       </div>
 
-      <div className="w-full flex-grow px-4 md:px-12 lg:px-24 mb-8"> {/* 👈 Add margin-bottom here */}
+      <div className="w-full flex-grow px-4 md:px-12 lg:px-24 mb-8"> 
         <div className="w-full h-[90vh] rounded-lg shadow overflow-hidden">
           <PowerBIWrapper
-
             desktopUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=701b1761016410d4d8ca"
             mobileUrl="https://app.powerbi.com/view?r=eyJrIjoiNmI2YTRkNjgtM2EwYy00MmIzLThkZTgtNTFlYzk1MTNjYzJjIiwidCI6ImFlYjc0NWU2LTgxNjYtNGY4Zi05MjMzLTE3OWU4MTA5YzQ5ZSIsImMiOjEwfQ%3D%3D&pageName=70d9ffb63a4ca430eddd"
             reportId={''} accessToken={''} />
