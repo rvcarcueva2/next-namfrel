@@ -6,7 +6,7 @@ import SubHeader from "./components/SubHeader";
 import Footer from "./components/Footer";
 
 const manrope = Manrope({
-  variable: "--font-manrope",
+  variable: "--font-helvaetica",
   subsets: ["latin"],
   weight: ["400", "600", "700"],
 });
@@ -24,38 +24,31 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${manrope.variable} antialiased`}>
-          <div className="z-20 flex -mb-30">
-            <div className="logo-shadow-wrapper">
-              <div className="logo-container">
-                <img
-                  src="/images/2025-NAMFREL-logo.png"
-                  alt="Eleksyon Logo"
-                  className="eleksyon-logo namfrel-logo"
-                />
-
-                <img
-                  src="/images/APC-Gold_Site-Seal.png"
-                  alt="APC Logo"
-                  className="eleksyon-logo apc-logo"
-                />
-              </div>
+        <div className="mt-8 mb-10 mx-auto max-w-screen-2xl px-4">
+          <div className="logo-container-wrapper">
+            <div className="logo-container">
+              <img
+                src="/images/2025-NAMFREL-logo.png"
+                alt="Eleksyon Logo"
+                className="namfrel-logo"
+              />
+              <img
+                src="/images/APC-Gold_Site-Seal.png"
+                alt="APC Logo"
+                className="apc-logo"
+              />
             </div>
           </div>
+        </div>
 
-          <div className="flex-1">
-            <div className="logo-spacer hidden md:block" />
-              <div className="header-container relative z-10"> 
-                <Header />
-                <SubHeader />
-              </div>
-          </div>
-          
-        {/* Main content */}
-        {children}
-
-      <Footer />
+        <Header />
+        <SubHeader />
         
-    </body>
-  </html>
+          {children}
+        
+
+        <Footer />
+      </body>
+    </html>
   );
 }

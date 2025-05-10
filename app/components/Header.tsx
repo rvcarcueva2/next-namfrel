@@ -9,10 +9,11 @@ export default function Header() {
 
   const mainLinks = [
     { href: "/", label: "Results" },
-    { href: "/crowdsourcing", label: "Crowdsourcing"},
-    { href: "/transmission", label: "Transmission"},
+    { href: "/crowdsourcing", label: "Crowdsourcing" },
+    { href: "/transmission", label: "Transmission" },
     { href: "/analytics", label: "Analytics" },
     { href: "/election-statistics", label: "Election Statistics" },
+    { href: "/demographics", label: "Demographics" },
   ];
 
   const subLinks = [
@@ -24,74 +25,59 @@ export default function Header() {
   ];
 
   return (
-    <header className="main-header relative z-10 flex items-center bg-blue-700 h-25">
-    
-      {/* Desktop nav */}
+    <header className="main-header">
       <nav className="hidden md:flex flex-1 justify-center items-center gap-8 text-white font-semibold">
-        {mainLinks.map(({ href, label }) => {
-          const isActive = pathname === href;
-          return (
-            <a
-              key={href}
-              href={href}
-              className={`text-lg transition transform active:-translate-y-0.5 relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100 ${
-                isActive ? "after:scale-x-100 font-bold" : ""
-              }`}
-            >
-              {label}
-            </a>
-          );
-        })}
+        {mainLinks.map(({ href, label }) => (
+          <a
+            key={href}
+            href={href}
+            className={`text-lg transition relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+              pathname === href ? "after:scale-x-100 font-bold" : ""
+            }`}
+          >
+            {label}
+          </a>
+        ))}
       </nav>
-
-      {/* Mobile menu button */}
-      <div className="md:hidden flex justify-between items-center px-4 py-2">
-        <span className="text-lg font-bold"></span>
-        <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+      <div className="md:hidden flex items-center justify-end z-50">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-white hover:text-gray-200 transition p-2"
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
       </div>
-
-      {/* Mobile nav */}
       {isOpen && (
-        <div className="md:hidden flex flex-col px-4 pb-4 gap-4">
-          <div className="space-y-2">
-            {mainLinks.map(({ href, label }) => {
-              const isActive = pathname === href;
-              return (
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#1e0775] shadow-lg z-40">
+          <div className="px-4 py-4 space-y-2">
+            {mainLinks.map(({ href, label }) => (
+              <a
+                key={href}
+                href={href}
+                className={`block text-lg text-white hover:bg-blue-600 px-4 py-3 rounded-lg ${
+                  pathname === href ? "bg-blue-600 font-bold" : ""
+                }`}
+              >
+                {label}
+              </a>
+            ))}
+            <div className="border-t border-white/20 pt-4">
+              {subLinks.map(({ href, label }) => (
                 <a
                   key={href}
                   href={href}
-                  className={`block text-base transition relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100 ${
-                    isActive ? "after:scale-x-100 font-bold" : ""
+                  className={`block text-lg text-white hover:bg-[#dc160c] px-4 py-3 rounded-lg ${
+                    pathname === href ? "bg-[#dc160c] font-bold" : ""
                   }`}
                 >
                   {label}
                 </a>
-              );
-            })}
-          </div>
-          
-          <div className="pt-4 border-t border-white/20">
-            {subLinks.map(({ href, label }) => {
-              const isActive = pathname === href;
-              return (
-                <a
-                  key={href}
-                  href={href}
-                  className={`block text-base uppercase transition relative after:block after:h-0.5 after:bg-white after:scale-x-0 after:transition-transform after:duration-300 after:origin-left hover:after:scale-x-100 ${
-                    isActive ? "after:scale-x-100 font-bold" : ""
-                  }`}
-                >
-                  {label}
-                </a>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </div>
-
-      
       )}
     </header>
-  );
+);
 }
