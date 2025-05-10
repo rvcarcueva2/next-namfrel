@@ -27,7 +27,7 @@ export default function ElectionStatisticsPage() {
 
 
         if (!data) {
-          throw new Error('Waiting for result.')
+          throw new Error('Results as of -')
         }
 
         setLatest(data)
@@ -51,9 +51,9 @@ export default function ElectionStatisticsPage() {
             {loading ? (
               <p>Loading...</p>
             ) : error ? (
-              <p style={{ color: 'red' }}>{error}</p>
+              <p className="text-[#11349C]">{error}</p>
             ) : latest ? (
-              <p>Results as of {new Date(latest.created_at).toLocaleString()}</p>
+            latest?.created_at ? <Timestamp value={latest.created_at} /> : 'Loading...'
             ) : null}
         </div>
         <p className="text-m px-[15px] md:px-8  mt-1">
