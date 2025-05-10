@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import SubHeader from "./components/SubHeader";
 import Footer from "./components/Footer";
+import Disclaimer from "./components/Disclaimer";
 
 const manrope = Manrope({
   variable: "--font-helvetica",
@@ -46,7 +47,7 @@ export default function RootLayout({
         
           {children}
         
-
+        <Disclaimer />
         <Footer />
       </body>
     </html>
