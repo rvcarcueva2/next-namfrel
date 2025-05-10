@@ -13,6 +13,7 @@ export default function Header() {
     { href: "/transmission", label: "Transmission" },
     { href: "/analytics", label: "Analytics" },
     { href: "/election-statistics", label: "Election Statistics" },
+    { href: "/demographics", label: "Demographics" },
   ];
 
   const subLinks = [
