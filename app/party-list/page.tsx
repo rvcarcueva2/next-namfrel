@@ -27,7 +27,7 @@ export default function PartylistPage() {
 
 
         if (!data) {
-          throw new Error('Waiting for result.')
+          throw new Error('Results as of -')
         }
 
         setLatest(data)
@@ -50,13 +50,13 @@ export default function PartylistPage() {
             {loading ? (
               <p>Loading...</p>
             ) : error ? (
-              <p style={{ color: 'red' }}>{error}</p>
+              <p className="text-[#11349C]">{error}</p>
             ) : latest ? (
-              <p>Results as of {new Date(latest.created_at).toLocaleString()}</p>
+            latest?.created_at ? <Timestamp value={latest.created_at} /> : 'Loading...'
             ) : null}
         </div>
         <p className="text-m px-[15px] md:px-8  mt-1">
-          These are <strong>PARTIAL</strong> and <strong>UNOFFICAL</strong> results of the 2025 Philippine Midterm Elections.<br></br>Choose a region or province to display the election results. Refresh the page for the most recent updates. 
+          These are <strong>PARTIAL</strong> and <strong>UNOFFICIAL</strong> results of the 2025 Philippine Midterm Elections.<br></br>Choose a region or province to display the election results. Refresh the page for the most recent updates. 
         </p>
       </div>
 
