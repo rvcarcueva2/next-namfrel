@@ -6,7 +6,7 @@ import SubHeader from "./components/SubHeader";
 import Footer from "./components/Footer";
 
 const manrope = Manrope({
-  variable: "--font-helvaetica",
+  variable: "--font-helvetica",
   subsets: ["latin"],
   weight: ["400", "600", "700"],
 });
